@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Plus+Jakarta+Sans:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-add-container center">
+        <div class="form-add">
+          <i class="fa-solid fa-xmark js-btn-close-form cursor-pointer"></i>
+          <h4 class="header-form-add">Add new todo</h4>
+          <input type="text" name="" id="input-category" placeholder="Category Etc: Marketing....">
+          <input type="text" name="" id="input-tiltle" placeholder="Title">
+          <textarea id="input-content" placeholder="Content"></textarea>
+          <input type="button" value="Submit">
+        </div>
+      </div>
+      <div class="form-edit-container center">
+        <div class="form-edit">
+          <i class="fa-solid fa-xmark js-btn-close-form cursor-pointer"></i>
+          <h4 class="header-form-edit">Edit todo</h4>
+          <input type="text" name="" id="input-category">
+          <input type="text" name="" id="input-tiltle">
+          <textarea id="input-content"></textarea>
+          <div class="group-radio-button">
+            <span>
+              <input type="radio" name="category" id="">
+              <label for="">To do</label>
+            </span>
+            <span>
+              <input type="radio" name="category" id="">
+              <label for="">Doing</label>
+            </span>
+            <span>
+              <input type="radio" name="category" id="">
+              <label for="">Finished</label>
+            </span>
+          </div>
+          <input type="button" value="Submit">
+        </div>
+      </div>
+      <div class="header">
+        <div class="header-left">
+          <div class="logo">
+            <img
+              src="./assets/img/logo-taskio-0e358e6b5592e0b71eba2806bf4d4eb53a101a0047b739a9054d0f63e982513c 1.png"
+              alt=""
+            />
+          </div>
+          <span class="sologan">
+            <p>Let's get shit done!</p>
+            <img src="./assets/img/peace 1.png" alt="" />
+          </span>
+        </div>
+        <div class="header-right center btn-add">
+          <i class="fa-sharp fa-solid fa-plus"></i>
+          <p>New task</p>
+        </div>
+      </div>
+      <div class="main-area">
+        <div class="list-work list-todo">
+            <div class="header-list">
+                <p class="type-of-list">Todo</p>
+                <span class="quantity-item center">
+                  <p>3</p>
+                </span>
+            </div>
+            <div class="bottom-line"></div>
+            <div class="list-item list-item-todo">
+              <!-- <div class="item">
+                <div class="header-item">
+                  <div class="header-item-left">
+                    <a class="type-of-work">Marketing</a>
+                    <p class="title-of-work">Write SEO article for new product</p>
+                  </div>
+                  <div class="header-item-right">
+                    <i class="fa-regular fa-pen-to-square js-button-edit cursor-pointer"></i>
+                    <i class="fa-solid fa-trash cursor-pointer"></i>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+                  <span class="time-line">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>June 30, 2022</p>
+                  </span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="header-item">
+                  <div class="header-item-left">
+                    <a class="type-of-work">Marketing</a>
+                    <p class="title-of-work">Write SEO article for new product</p>
+                  </div>
+                  <div class="header-item-right">
+                    <i class="fa-regular fa-pen-to-square js-button-edit cursor-pointer"></i>
+                    <i class="fa-solid fa-trash cursor-pointer"></i>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+                  <span class="time-line">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>June 30, 2022</p>
+                  </span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="header-item">
+                  <div class="header-item-left">
+                    <a class="type-of-work">Marketing</a>
+                    <p class="title-of-work">Write SEO article for new product</p>
+                  </div>
+                  <div class="header-item-right">
+                    <i class="fa-regular fa-pen-to-square js-button-edit cursor-pointer"></i>
+                    <i class="fa-solid fa-trash cursor-pointer"></i>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+                  <span class="time-line">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>June 30, 2022</p>
+                  </span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="header-item">
+                  <div class="header-item-left">
+                    <a class="type-of-work">Marketing</a>
+                    <p class="title-of-work">Write SEO article for new product</p>
+                  </div>
+                  <div class="header-item-right">
+                    <i class="fa-regular fa-pen-to-square js-button-edit cursor-pointer"></i>
+                    <i class="fa-solid fa-trash cursor-pointer"></i>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+                  <span class="time-line">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>June 30, 2022</p>
+                  </span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="header-item">
+                  <div class="header-item-left">
+                    <a class="type-of-work">Marketing</a>
+                    <p class="title-of-work">Write SEO article for new product</p>
+                  </div>
+                  <div class="header-item-right">
+                    <i class="fa-regular fa-pen-to-square js-button-edit cursor-pointer"></i>
+                    <i class="fa-solid fa-trash"></i>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+                  <span class="time-line">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>June 30, 2022</p>
+                  </span>
+                </div>
+              </div> -->
+            </div>
+        </div>
+        <div class="list-work list-doing">
+          <div class="header-list">
+            <p class="type-of-list">Doing</p>
+            <span class="quantity-item center">
+              <p>3</p>
+            </span>
+          </div>
+        <div class="bottom-line"></div>
+        <div class="list-item">
+          <div class="item">
+            <div class="header-item">
+              <div class="header-item-left">
+                <a class="type-of-work">Marketing</a>
+                <p class="title-of-work">Write SEO article for new product</p>
+              </div>
+              <div class="header-item-right">
+                <i class="fa-regular fa-pen-to-square js-button-edit cursor-pointer"></i>
+                <i class="fa-solid fa-trash cursor-pointer"></i>
+              </div>
+            </div>
+            <div class="work-content">
+              <p class="content">ritatis nisi placeat nctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+              <span class="time-line">
+                <i class="fa-regular fa-clock"></i>
+                <p>June 30, 2022</p>
+              </span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="header-item">
+              <div class="header-item-left">
+                <a class="type-of-work">Marketing</a>
+                <p class="title-of-work">Write SEO article for new product</p>
+              </div>
+              <div class="header-item-right">
+                <i class="fa-regular fa-pen-to-square js-button-edit cursor-pointer"></i>
+                <i class="fa-solid fa-trash cursor-pointer"></i>
+              </div>
+            </div>
+            <div class="work-content">
+              <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+              <span class="time-line">
+                <i class="fa-regular fa-clock"></i>
+                <p>June 30, 2022</p>
+              </span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="header-item">
+              <div class="header-item-left">
+                <a class="type-of-work">Marketing</a>
+                <p class="title-of-work">Write SEO article for new product</p>
+              </div>
+              <div class="header-item-right">
+                <i class="fa-regular fa-pen-to-square cursor-pointer js-button-edit"></i>
+                <i class="fa-solid fa-trash cursor-pointer"></i>
+              </div>
+            </div>
+            <div class="work-content">
+              <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+              <span class="time-line">
+                <i class="fa-regular fa-clock"></i>
+                <p>June 30, 2022</p>
+              </span>
+            </div>
+          </div>
+        </div> <cache></cache>
+        </div>
+        <div class="list-work list-finished">
+          <div class="header-list">
+            <p class="type-of-list">Finished</p>
+            <span class="quantity-item center">
+              <p>3</p>
+            </span>
+          </div>
+          <div class="bottom-line"></div>
+          <div class="list-item">
+            <div class="item">
+              <div class="header-item">
+                <div class="header-item-left">
+                  <a class="type-of-work">Marketing</a>
+                  <p class="title-of-work">Write SEO article for new product</p>
+                </div>
+                <div class="header-item-right">
+                  <i class="fa-regular fa-pen-to-square js-button-edit cursor-pointer"></i>
+                  <i class="fa-solid fa-trash cursor-pointer"></i>
+                </div>
+              </div>
+              <div class="work-content">
+                <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+                <span class="time-line">
+                  <i class="fa-regular fa-clock"></i>
+                  <p>June 30, 2022</p>
+                </span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="header-item">
+                <div class="header-item-left">
+                  <a class="type-of-work">Marketing</a>
+                  <p class="title-of-work">Write SEO article for new product</p>
+                </div>
+                <div class="header-item-right">
+                  <i class="fa-regular fa-pen-to-square cursor-pointer js-button-edit"></i>
+                  <i class="fa-solid fa-trash cursor-pointer"></i>
+                </div>
+              </div>
+              <div class="work-content">
+                <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+                <span class="time-line">
+                  <i class="fa-regular fa-clock"></i>
+                  <p>June 30, 2022</p>
+                </span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="header-item">
+                <div class="header-item-left">
+                  <a class="type-of-work">Marketing</a>
+                  <p class="title-of-work">Write SEO article for new product</p>
+                </div>
+                <div class="header-item-right">
+                  <i class="fa-regular fa-pen-to-square cursor-pointer js-button-edit"></i>
+                  <i class="fa-solid fa-trash cursor-pointer"></i>
+                </div>
+              </div>
+              <div class="work-content">
+                <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iure vel veritatis nisi placeat expedita distinctio fuga harum itaque iste sed alias assumenda perferendis recusandae numquam, quis dolore beatae aliquid.</p>
+                <span class="time-line">
+                  <i class="fa-regular fa-clock"></i>
+                  <p>June 30, 2022</p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <script src="./script.js"></script>
+  </body>
+</html>
