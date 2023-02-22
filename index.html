@@ -36,24 +36,25 @@
         <div class="form-edit">
           <i class="fa-solid fa-xmark js-btn-close-form cursor-pointer"></i>
           <h4 class="header-form-edit">Edit todo</h4>
-          <input type="text" name="" id="input-category">
-          <input type="text" name="" id="input-tiltle">
-          <textarea id="input-content"></textarea>
+          <input type="text" id="input-id-edit" hidden>
+          <input type="text" name="" id="input-category-edit">
+          <input type="text" name="" id="input-tiltle-edit">
+          <textarea id="input-content-edit"></textarea>
           <div class="group-radio-button">
             <span>
-              <input type="radio" name="category" id="">
+              <input type="radio" name="category" id="" value="todo">
               <label for="">To do</label>
             </span>
             <span>
-              <input type="radio" name="category" id="">
+              <input type="radio" name="category" id="" value="doing">
               <label for="">Doing</label>
             </span>
             <span>
-              <input type="radio" name="category" id="">
+              <input type="radio" name="category" id="" value="finished">
               <label for="">Finished</label>
             </span>
           </div>
-          <input type="button" value="Submit">
+          <input type="button" value="Submit" class="js-btn-edit">
         </div>
       </div>
       <div class="header">
@@ -96,6 +97,7 @@
         <div class="bottom-line"></div>
         <div class="list-item list-item-doing">
         </div> 
+        
         </div>
         <div class="list-work list-finished">
           <div class="header-list">
