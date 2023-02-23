@@ -309,4 +309,48 @@ html {
   border-radius: 2px;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .container .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .container .header .header-left .sologan {
+    justify-content: center;
+    align-items: center;
+  }
+  .container .header .header-right {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .container .main-area {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .main-area .list-work {
+    width: 90%;
+  }
+  .container .main-area .list-work .list-item {
+    height: auto;
+    max-height: 350px;
+  }
+  .container .main-area .list-work .list-item .item {
+    min-height: 170px;
+  }
+  .container .form-add {
+    width: 400px;
+  }
+  .container .form-edit {
+    width: 400px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

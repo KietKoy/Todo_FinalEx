@@ -84,7 +84,6 @@ html {
             justify-content: space-between;
             align-items: center;
             height: 34px;
-            
             border-radius: 4px;
             padding: 0 10px;
         }
@@ -309,4 +308,50 @@ html {
 .border-green {
     border: 2px solid green !important;
     border-radius: 2px;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        .header {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            .header-left {
+                .sologan {
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            .header-right {
+                margin-top: 10px;
+                padding: 10px 20px;
+                border: 1px solid black;
+                border-radius: 4px;
+                margin-bottom: 20px;
+            }
+        }
+        .main-area {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .list-work {
+                width: 90%;
+                .list-item {
+                    height: auto;
+                    max-height: 350px;
+                    .item {
+                        min-height: 170px;
+                    }
+                }
+            }
+        }
+        .form-add {
+            width: 400px;
+        }
+        .form-edit {
+            width: 400px;
+        }
+    }
+    
 }
