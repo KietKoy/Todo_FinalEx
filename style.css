@@ -293,6 +293,7 @@ html {
 .form-edit-container .form-edit .group-radio-button span {
   display: flex;
   justify-content: center;
+  white-space: nowrap;
 }
 .form-edit-container .form-edit .group-radio-button span label {
   font-size: 1.6rem;
