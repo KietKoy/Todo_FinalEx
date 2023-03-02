@@ -67,7 +67,7 @@ btnEdit.addEventListener("click", () => {
   })
   if (isCheckValidData) {
     checkboxs.forEach(checkbox => {
-      if(checkbox.checked) {
+      if (checkbox.checked) {
         type = checkbox.value;
       }
     })
@@ -90,7 +90,7 @@ for (const value of btnCloseForm) {
   })
 }
 function resetFormAdd() {
-  const inputs = [document.querySelector('#input-category'), document.querySelector('#input-tiltle'),  document.querySelector('#input-content')];
+  const inputs = [document.querySelector('#input-category'), document.querySelector('#input-tiltle'), document.querySelector('#input-content')];
   inputs.forEach(input => {
     input.value = "";
     input.classList.remove("border-green");
@@ -98,7 +98,7 @@ function resetFormAdd() {
   })
 }
 function resetFormEdit() {
-  const inputs = [document.querySelector('#input-category-edit'), document.querySelector('#input-tiltle-edit'),  document.querySelector('#input-content-edit')];
+  const inputs = [document.querySelector('#input-category-edit'), document.querySelector('#input-tiltle-edit'), document.querySelector('#input-content-edit')];
   inputs.forEach(input => {
     input.value = "";
     input.classList.remove("border-green");
@@ -107,7 +107,7 @@ function resetFormEdit() {
 }
 async function getData(url = '') {
   const response = await fetch(url, {
-    method: 'GET',  
+    method: 'GET',
   });
   return response.json();
 }
@@ -115,24 +115,24 @@ async function delData(url = '', id = '', callback) {
   const response = await fetch(url + '/' + id, {
     method: 'DELETE',
   })
-  .then(() => {
-    while (true) {
-      let index = todoData.indexOf(todoData.find(e => e.id == id))
-      if(index > -1) {
-        todoData.splice(index, 1);
+    .then(() => {
+      while (true) {
+        let index = todoData.indexOf(todoData.find(e => e.id == id))
+        if (index > -1) {
+          todoData.splice(index, 1);
+          break;
+        }
+        index = doingData.indexOf(doingData.find(e => e.id == id))
+        if (index > -1) {
+          doingData.splice(index, 1);
+          break;
+        }
+        index = doingData.indexOf(doingData.find(e => e.id == id))
+        finishedData.splice(index, 1);
         break;
       }
-      index = doingData.indexOf(doingData.find(e => e.id == id))
-      if(index > -1) {
-        doingData.splice(index, 1);
-        break;
-      }
-      index = doingData.indexOf(doingData.find(e => e.id == id))
-      finishedData.splice(index, 1);
-      break;
-    }
-  })
-  .then(callback)
+    })
+    .then(callback)
 }
 async function postData(url = '', data = {}, callback) {
   const response = await fetch(url, {
@@ -146,7 +146,7 @@ async function postData(url = '', data = {}, callback) {
     })
     .then(callback)
 }
-async function putData(url = '',id = -1, data = {}, callback) {
+async function putData(url = '', id = -1, data = {}, callback) {
   const response = await fetch(`${url}/${id}`, {
     method: 'PUT',
     headers: { 'Content-type': 'application/json' },
@@ -156,12 +156,12 @@ async function putData(url = '',id = -1, data = {}, callback) {
     .then(json => {
       while (true) {
         let index = todoData.indexOf(todoData.find(e => e.id == json.id))
-        if(index > -1) {
-          if(json.type == 'doing') {
+        if (index > -1) {
+          if (json.type == 'doing') {
             doingData.push(json);
             todoData.splice(index, 1);
           }
-          else if(json.type == 'todo') {
+          else if (json.type == 'todo') {
             todoData.splice(index, 1, json);
           }
           else {
@@ -171,11 +171,11 @@ async function putData(url = '',id = -1, data = {}, callback) {
           break;
         }
         index = doingData.indexOf(doingData.find(e => e.id == json.id))
-        if(index > -1) {
-          if(json.type == 'doing') {
+        if (index > -1) {
+          if (json.type == 'doing') {
             doingData.splice(index, 1, json);
           }
-          else if(json.type == 'todo') {
+          else if (json.type == 'todo') {
             todoData.push(json);
             doingData.splice(index, 1);
           }
@@ -186,11 +186,11 @@ async function putData(url = '',id = -1, data = {}, callback) {
           break;
         }
         index = finishedData.indexOf(finishedData.find(e => e.id == json.id));
-        if(json.type == 'doing') {
+        if (json.type == 'doing') {
           doingData.push(json);
           finishedData.splice(index, 1);
         }
-        else if(json.type == 'todo') {
+        else if (json.type == 'todo') {
           todoData.push(json);
           finishedData.splice(index, 1);
         }
@@ -206,8 +206,8 @@ function renderTodoList() {
   let todoRender = '';
   let dateFormatted;
   for (const value of todoData) {
-      dateFormatted = new Date(value['createdAt']).toDateString().split(' ');
-      todoRender += `<div class="item todo" draggable="true" id="${value['id']}">
+    dateFormatted = new Date(value['createdAt']).toDateString().split(' ');
+    todoRender += `<div class="item todo" draggable="true" id="${value['id']}">
                 <div class="header-item">
                   <div class="header-item-left">
                     <a class="type-of-work">${value['category']}</a>
@@ -231,7 +231,7 @@ function renderTodoList() {
   listItemTodo.innerHTML = todoRender;
   const todos = document.querySelectorAll('.todo');
   console.log(todos);
-  todos.forEach((todo) => { 
+  todos.forEach((todo) => {
     todo.addEventListener('dragstart', dragStart)
     todo.addEventListener('dragend', dragEnd)
   });
@@ -240,8 +240,8 @@ function renderDoingList() {
   let doingRender = '';
   let dateFormatted;
   for (const value of doingData) {
-      dateFormatted = new Date(value['createdAt']).toDateString().split(' ');
-      doingRender += `<div class="item doing" draggable="true" id="${value['id']}">
+    dateFormatted = new Date(value['createdAt']).toDateString().split(' ');
+    doingRender += `<div class="item doing" draggable="true" id="${value['id']}">
                 <div class="header-item">
                   <div class="header-item-left">
                     <a class="type-of-work">${value['category']}</a>
@@ -264,7 +264,7 @@ function renderDoingList() {
   quantityDoing.innerText = doingData.length;
   listItemDoing.innerHTML = doingRender;
   const doings = document.querySelectorAll('.doing');
-  doings.forEach((doing) => { 
+  doings.forEach((doing) => {
     doing.addEventListener('dragstart', dragStart)
     doing.addEventListener('dragend', dragEnd)
   });
@@ -273,8 +273,8 @@ function renderFinishedList() {
   let finishedRender = '';
   let dateFormatted;
   for (const value of finishedData) {
-      dateFormatted = new Date(value['createdAt']).toDateString().split(' ');
-      finishedRender += `<div class="item finished" draggable="true" id="${value['id']}">
+    dateFormatted = new Date(value['createdAt']).toDateString().split(' ');
+    finishedRender += `<div class="item finished" draggable="true" id="${value['id']}">
                 <div class="header-item">
                   <div class="header-item-left">
                     <a class="type-of-work">${value['category']}</a>
@@ -297,7 +297,7 @@ function renderFinishedList() {
   quantityFinished.innerText = finishedData.length;
   listItemFinished.innerHTML = finishedRender;
   const finisheds = document.querySelectorAll('.finished');
-  finisheds.forEach((finished) => { 
+  finisheds.forEach((finished) => {
     finished.addEventListener('dragstart', dragStart)
     finished.addEventListener('dragend', dragEnd)
   });
@@ -326,7 +326,7 @@ function showItemEdit(id) {
   title.value = item['title'];
   content.value = item['content'];
   checkboxs.forEach(checkbox => {
-    if(checkbox.value == item['type']) {
+    if (checkbox.value == item['type']) {
       checkbox.checked = true;
     }
   })
@@ -350,7 +350,7 @@ function getDataFromApi(callback1, callback2, callback3) {
     .then(callback1)
     .then(callback2)
     .then(callback3)
-    console.log("getdata");
+  console.log("getdata");
 }
 renderfromApi();
 
@@ -363,65 +363,65 @@ listItems.forEach(listItem => {
 })
 function dragStart() {
   draggable = this;
-  // console.log("dragstart");
 }
 function dragEnd() {
   draggable = null;
-  // console.log("dragEnd");
 }
 function dragOver(e) {
   e.preventDefault();
-  // console.log("dragover");
 }
+let isDrop = false;
 function dragEnter() {
-  // console.log("dragenter");
+  isDrop = true;
 }
 function dragLeave() {
-  // console.log("dragleave");
+  isDrop = false;
 }
 function dragDrop() {
-  const categoryParentOfItem =  draggable.parentElement.classList.toString();
-  if(categoryParentOfItem.includes('list-item-todo')) {
-    const data = todoData.find(e => e.id == draggable.id);
-    quantityTodo.innerText = todoData.length - 1;
-    if(this.classList.toString().includes('list-item-doing')) {
-      quantityDoing.innerText = doingData.length + 1;
-      data.type = 'doing';
-      putData(api, data.id, data, null);
+  if(isDrop) {
+    const categoryParentOfItem = draggable.parentElement.classList.toString();
+    if (categoryParentOfItem.includes('list-item-todo')) {
+      const data = todoData.find(e => e.id == draggable.id);
+      quantityTodo.innerText = todoData.length - 1;
+      if (this.classList.toString().includes('list-item-doing')) {
+        quantityDoing.innerText = doingData.length + 1;
+        data.type = 'doing';
+        putData(api, data.id, data, null);
+      }
+      else {
+        quantityFinished.innerText = finishedData.length + 1;
+        data.type = 'finished';
+        putData(api, data.id, data, null);
+      }
+    }
+    else if (categoryParentOfItem.includes('list-item-doing')) {
+      const data = doingData.find(e => e.id == draggable.id);
+      quantityDoing.innerText = doingData.length - 1;
+      if (this.classList.toString().includes('list-item-todo')) {
+        quantityTodo.innerText = todoData.length + 1;
+        data.type = 'todo';
+        putData(api, data.id, data, null);
+      }
+      else {
+        quantityFinished.innerText = finishedData.length + 1;
+        data.type = 'finished';
+        putData(api, data.id, data, null);
+      }
     }
     else {
-      quantityFinished.innerText = finishedData.length + 1;
-      data.type = 'finished';
-      putData(api, data.id, data, null);
+      const data = finishedData.find(e => e.id == draggable.id);
+      quantityFinished.innerText = finishedData.length - 1;
+      if (this.classList.toString().includes('list-item-todo')) {
+        quantityTodo.innerText = todoData.length + 1;
+        data.type = 'todo';
+        putData(api, data.id, data, null);
+      }
+      else {
+        quantityDoing.innerText = doingData.length + 1;
+        data.type = 'doing';
+        putData(api, data.id, data, null);
+      }
     }
+    this.appendChild(draggable);
   }
-  else if(categoryParentOfItem.includes('list-item-doing')) {
-    const data = doingData.find(e => e.id == draggable.id);
-    quantityDoing.innerText = doingData.length - 1;
-    if(this.classList.toString().includes('list-item-todo')) {
-      quantityTodo.innerText = todoData.length + 1;
-      data.type = 'todo';
-      putData(api, data.id, data, null);
-    }
-    else {
-      quantityFinished.innerText = finishedData.length + 1;
-      data.type = 'finished';
-      putData(api, data.id, data, null);
-    }
-  }
-  else {
-    const data = finishedData.find(e => e.id == draggable.id);
-    quantityFinished.innerText = finishedData.length - 1;
-    if(this.classList.toString().includes('list-item-todo')) {
-      quantityTodo.innerText = todoData.length + 1;
-      data.type = 'todo';
-      putData(api, data.id, data, null);
-    }
-    else {
-      quantityDoing.innerText = doingData.length + 1;
-      data.type = 'doing';
-      putData(api, data.id, data, null);
-    }
-  }
-  this.appendChild(draggable);
 }
